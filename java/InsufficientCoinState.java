@@ -10,6 +10,7 @@ public class InsufficientCoinState implements State
     // instance variables - replace the example below with your own
     GumballMachine gumballMachine;
     int coin;
+    int change;
 
     /**
      * Constructor for objects of class InsufficientCoinState
@@ -30,6 +31,7 @@ public class InsufficientCoinState implements State
         //System.out.println("coin" + coin);
         if(coin>=50){
             System.out.println("enough");
+            change = coin-50;
             coin = 0;
             gumballMachine.setState(gumballMachine.getHasQuarterState());
            
@@ -42,6 +44,7 @@ public class InsufficientCoinState implements State
         coin = coin+10;
         //System.out.println("coin" + coin);
         if(coin>=50){
+             change = coin-50;
              coin =0;
             System.out.print("enough");
             gumballMachine.setState(gumballMachine.getHasQuarterState());
@@ -54,9 +57,10 @@ public class InsufficientCoinState implements State
         coin = coin+5;
         //System.out.println("coin" + coin);
         if(coin>=50){
+           change = coin-50;
            coin = 0;
-            System.out.println("enough");
-            gumballMachine.setState(gumballMachine.getHasQuarterState());
+           System.out.println("enough");
+           gumballMachine.setState(gumballMachine.getHasQuarterState());
             
         }
     }
@@ -75,6 +79,10 @@ public class InsufficientCoinState implements State
     
     public boolean isGumballInSlot(){
        return false;
+    }
+    
+    public int getChange(){
+        return change;
     }
     
     

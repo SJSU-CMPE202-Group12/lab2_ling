@@ -9,6 +9,8 @@ public interface State {
 	public void turnCrank();
 	public void dispense();
 	boolean isGumballInSlot() ;
+	int getChange();
+   
 	//
     //void takeGumballFromSlot( ) ;
 }

@@ -264,7 +264,52 @@ public class GumballMachineTest
     }*/
 
    
+    
+    
+
+    @Test
+    public void removeGumball()
+    {
+        System.out.println("");
+        System.out.println("Test11");
+        m1.insertQuarter();
+        m1.insertQuarter();
+        m1.turnCrank();
+        m1.takeGumballFromSlot();
+        assertEquals(false, m1.isGumballInSlot());
+    }
+
+    @Test
+    public void removeTwoGumball()
+    {
+        System.out.println("");
+        System.out.println("Test12");
+        m1.insertQuarter();
+        m1.insertQuarter();
+        m1.turnCrank();
+        m1.insertQuarter();
+        m1.insertQuarter();
+        m1.turnCrank();
+        m1.takeGumballFromSlot();
+        assertEquals(false, m1.isGumballInSlot());
+    }
+
+    @Test
+    public void returnChange()
+    {
+        System.out.println("");
+        System.out.println("Test13");
+        m1.insertQuarter();
+        m1.insertDime();
+        m1.insertDime();
+         m1.insertDime();
+        m1.turnCrank();
+        assertEquals(5, m1.returnChange());
+    }
 }
+
+
+
 
 
 

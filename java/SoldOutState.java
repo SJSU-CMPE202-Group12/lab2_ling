@@ -42,6 +42,9 @@ public class SoldOutState implements State {
          return false;
     }
     
+    public int getChange(){
+        return 0;
+    }
  
     public String toString() {
         return "sold out";

@@ -56,6 +56,10 @@ public class SoldState implements State {
        
       //return true;
     }
+    
+    public int getChange(){
+        return 0;
+    }
  
     public String toString() {
         return "dispensing a gumball";

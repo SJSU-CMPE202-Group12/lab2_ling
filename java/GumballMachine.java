@@ -14,6 +14,7 @@ public class GumballMachine implements IGumballMachine {
     boolean isGumballInSlot = false;
     int count = 0;
     int coin =0;
+    int change= 0;
     boolean check;
  
     public GumballMachine(int numberGumballs) {
@@ -46,15 +47,19 @@ public class GumballMachine implements IGumballMachine {
  
    
      public void insertQuarter() {
-        state.insertQuarter(25);
-        System.out.println(state.toString());
+        //coin = coin+25;
+         state.insertQuarter(25);
+         //System.out.println(coin);
+        //System.out.println(state.toString());
     }
     
     public void insertDime(){
+        //coin = coin+10;
         state.insertDime(10);
     }
      
     public void insertNickel(){
+        //coin = coin+5;
         state.insertNickel(5);
     }
     
@@ -103,11 +108,13 @@ public class GumballMachine implements IGumballMachine {
     public void takeGumballFromSlot(){
         
         if (isGumballInSlot = false){
+            check = false;
             setState( insufficientCoinState);
         }
         else{
             System.out.println("please take the gumball");
             isGumballInSlot=false;
+            check = false;
             setState( insufficientCoinState);
         }
         
@@ -142,6 +149,16 @@ public class GumballMachine implements IGumballMachine {
 
     public State getSoldState() {
         return soldState;
+    }
+    
+    public int returnChange(){
+        State state2=getInsufficientCoinState();
+        change = state2.getChange() ;
+        //System.out.println("333333333333333"+ change);
+        if(change>0)            
+            return change;            
+        else
+            return 0;
     }
  
     public String toString() {

@@ -39,6 +39,10 @@ public class HasQuarterState implements State {
     public boolean isGumballInSlot(){
        return false;
     }
+    
+    public int getChange(){
+        return 0;
+    }
  
 	public String toString() {
 		return "waiting for turn of crank";
